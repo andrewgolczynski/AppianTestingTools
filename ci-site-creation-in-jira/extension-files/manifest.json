@@ -1,0 +1,20 @@
+{
+	"manifest_version": 2,
+	"name": "CI/Jira Integration",
+	"permissions": [
+          "tabs"
+    ],
+	"version": "1.0",
+	"content_scripts": [
+		{
+			"matches": [
+				"https://issues.appian.com/browse/AN-*",
+				"https://issues.appian.com/browse/IOS-*",
+				"https://issues.appian.com/browse/DR-*"
+			],
+			"js": ["jquery-1.12.0.min.js", "InjectCreateCISiteAction.js", "bootstrap.min.js"],
+			"css": ["bootstrap.min.css"]
+		}
+	],
+	"content_security_policy": "script-src 'self' https://daily.appianci.net; object-src 'self' https://daily.appianci.net"
+}
